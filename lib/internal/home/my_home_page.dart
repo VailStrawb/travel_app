@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -21,11 +20,11 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.only(left: 15.0, top: 35.0),
+              padding: const EdgeInsets.only(left: 25.0, top: 35.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: Image.asset(
-                  'assets/images/Group 77.png',
+                  'assets/images/get_started_bagpack_icon.png',
                   fit: BoxFit.fitHeight,
                   alignment: Alignment.topLeft,
                   width: 80,
@@ -35,14 +34,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.only(left: 25.0, top: 15.0, bottom: 15.0),
+            padding: EdgeInsets.only(left: 25.0, top: 25.0, bottom: 10.0),
             child: Text(
               'Live Travel Enjoy',
               style: TextStyle(
                 color: Colors.white70,
                 fontSize: 30,
                 fontWeight: FontWeight.w500,
-                fontFamily: 'Trajan Pro',
               ),
             ),
           ),
@@ -56,7 +54,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.white60,
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                fontFamily: 'Trajan Pro',
               ),
             ),
           ),
@@ -68,7 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.white60,
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
-                fontFamily: 'Trajan Pro',
               ),
             ),
           ),
@@ -78,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(200),
               child: Image.asset(
-                'assets/images/wallpaper.jpg',
+                'assets/images/get_started_photo.jpg',
                 fit: BoxFit.fitHeight,
                 alignment: Alignment.center,
                 width: 350,
@@ -96,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Size(10000, 50),
                   // double.infinity doesn't work here
                 ),
-                backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 219, 87, 22)),
+                backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 219, 87, 22)),
               ),
               onPressed: () {},
               child: const Text(
