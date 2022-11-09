@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'my_home_page.dart';
+import 'get_started_screen/get_started_screen.dart';
 
 class Application extends StatelessWidget {
   const Application({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,9 +12,7 @@ class Application extends StatelessWidget {
         fontFamily: 'OpenSans',
         primarySwatch: Colors.grey,
       ),
-      home: const MyHomePage(
-        title: '',
-      ),
+      home: const GetStartedScreen(),
     );
   }
 }

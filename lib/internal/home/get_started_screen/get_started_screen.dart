@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import '../home_screen.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class GetStartedScreen extends StatefulWidget {
+  const GetStartedScreen({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<GetStartedScreen> createState() => _GetStartedScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _GetStartedScreenState extends State<GetStartedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 219, 87, 22)),
               ),
-              onPressed: () {},
+              onPressed: _navigateHomeScreen,
               child: const Text(
                 'Get Started',
                 style: TextStyle(
@@ -108,6 +107,13 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         //  (colors: [Color(0xFFFACCCC), Color(0xFFF6EFE9)],)),
       ),
+    );
+  }
+
+  void _navigateHomeScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HomeScreen()),
     );
   }
 }
