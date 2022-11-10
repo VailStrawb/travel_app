@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,9 +6,26 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 32, 32, 32),
-      body: VisitedCountriesScreen(),
+    return Scaffold(
+      body: const VisitedCountriesScreen(),
+      bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: false,
+        currentIndex: 0,
+        selectedItemColor: Colors.white60,
+        unselectedItemColor: Colors.white30,
+        iconSize: 26.0,
+        backgroundColor: Color.fromARGB(255, 25, 25, 25),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map),
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.heart),
+            label: 'My Countries',
+          ),
+        ],
+      ),
     );
   }
 }
@@ -24,10 +42,10 @@ class VisitedCountriesScreen extends StatelessWidget {
           clipper: BackgroundWaveClipper(),
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: 250.0,
+            height: 240.0,
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
-              colors: [Color.fromARGB(255, 61, 60, 60), Color.fromARGB(255, 161, 160, 160)],
+              colors: [Color.fromARGB(255, 225, 88, 42), Color.fromARGB(255, 40, 40, 40)],
             )),
           ),
         ),
