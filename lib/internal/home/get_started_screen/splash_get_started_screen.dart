@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../home_screen.dart';
 
-class GetStartedScreen extends StatefulWidget {
-  const GetStartedScreen({super.key});
+class SplashGetStartedScreen extends StatefulWidget {
+  const SplashGetStartedScreen({super.key});
 
   @override
-  State<GetStartedScreen> createState() => _GetStartedScreenState();
+  State<SplashGetStartedScreen> createState() => _SplashGetStartedScreenState();
 }
 
-class _GetStartedScreenState extends State<GetStartedScreen> {
+class _SplashGetStartedScreenState extends State<SplashGetStartedScreen> {
+  resetNewLaunch() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (prefs.containsKey("newLaunch")) {
+      prefs.setBool('newLaunch', false);
+    } else {
+      prefs.setBool('newLaunch', false);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    resetNewLaunch();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

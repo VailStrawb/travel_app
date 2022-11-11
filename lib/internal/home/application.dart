@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'get_started_screen/get_started_screen.dart';
+import 'get_started_screen/load_screen.dart';
 
 class Application extends StatelessWidget {
   const Application({super.key});
@@ -12,7 +12,7 @@ class Application extends StatelessWidget {
         fontFamily: 'OpenSans',
         primarySwatch: Colors.grey,
       ),
-      home: const GetStartedScreen(),
+      home: const LoadScreen(),
     );
   }
 }
