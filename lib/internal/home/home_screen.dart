@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
   clearSharedPrefs() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.remove('newLaunch');
@@ -20,15 +21,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: const VisitedCountriesScreen(),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: _onItemTapped,
         showUnselectedLabels: false,
-        currentIndex: 0,
-        selectedItemColor: Colors.white60,
-        unselectedItemColor: Colors.white30,
+        currentIndex: _selectedIndex,
+        selectedFontSize: 13,
+        selectedItemColor: const Color.fromARGB(255, 210, 84, 41),
+        unselectedItemColor: Colors.white54,
         iconSize: 26.0,
-        backgroundColor: Color.fromARGB(255, 25, 25, 25),
+        backgroundColor: const Color.fromARGB(255, 25, 25, 25),
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.map),
+            icon: Icon(Icons.map_outlined),
             label: 'Explore',
           ),
           BottomNavigationBarItem(
@@ -38,6 +41,12 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 }
 
