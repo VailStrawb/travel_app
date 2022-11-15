@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../home_screen.dart';
+import '../home/home_screen.dart';
 
 class SplashGetStartedScreen extends StatefulWidget {
   const SplashGetStartedScreen({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'get_started_screen/load_screen.dart';
+import '../get_started_screen/load_screen.dart';
 
 class Application extends StatelessWidget {
   const Application({super.key});
