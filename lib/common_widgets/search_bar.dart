@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {
-  final orange = const Color.fromARGB(255, 210, 84, 41);
-  final grey = const Color.fromARGB(255, 25, 25, 25);
+  final grey = const Color.fromARGB(255, 70, 70, 70);
+  final white = const Color.fromARGB(255, 215, 215, 215);
 
   const SearchBar({super.key});
 
@@ -14,10 +14,10 @@ class SearchBar extends StatelessWidget {
         decoration: InputDecoration(
           filled: true,
           fillColor: Colors.white70,
-          focusColor: orange,
-          focusedBorder: _border(orange),
-          border: _border(grey),
-          enabledBorder: _border(grey),
+          focusColor: grey,
+          focusedBorder: _border(grey),
+          border: _border(white),
+          enabledBorder: _border(white),
           hintText: 'Start country search',
           contentPadding: const EdgeInsets.symmetric(vertical: 20),
           prefixIcon: const Icon(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'background_wave.dart';
 import '../../common_widgets/search_page.dart';
 
 class VisitedCountriesScreen extends StatelessWidget {
