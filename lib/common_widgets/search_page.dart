@@ -1,15 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/common_widgets/sliver_search_appbar.dart';
 
 import '../country_page.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
-  Future fetchCountries() async {
-    var url = '';
-  }
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
 
+class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +33,20 @@ class SearchPage extends StatelessWidget {
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(35.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        'Some country',
-                        style: TextStyle(fontSize: 20, color: Colors.white70, fontWeight: FontWeight.w600),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Expanded(
+                        child: Text(
+                          'Some country',
+                          style: TextStyle(fontSize: 20, color: Colors.white70, fontWeight: FontWeight.w600),
+                        ),
                       ),
+                      IconButton(
+                        icon: const Icon(CupertinoIcons.suit_heart),
+                        color: Colors.white54,
+                        onPressed: () {},
+                      )
                     ],
                   ),
                 ),
