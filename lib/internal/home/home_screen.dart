@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travel_app/internal/home/unvisited_countries_screen.dart';
-import 'package:travel_app/internal/home/visited_countries_screen.dart';
+import 'package:travel_app/internal/home/saved_countries_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static const List<Widget> _pages = <Widget>[
     UnvisitedCountriesScreen(),
-    VisitedCountriesScreen(),
+    SavedCountriesScreen(),
   ];
 
   clearSharedPrefs() async {

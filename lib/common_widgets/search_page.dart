@@ -43,7 +43,8 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                       ),
                       IconButton(
-                        icon: const Icon(CupertinoIcons.suit_heart),
+                        splashRadius: 1,
+                        icon: const Icon(CupertinoIcons.star),
                         color: Colors.white54,
                         onPressed: () {},
                       )
