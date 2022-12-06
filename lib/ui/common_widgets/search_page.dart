@@ -46,7 +46,7 @@ class _SearchPageState extends State<SearchPage> {
           SliverList(
               delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
             return Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(left: 12, top: 4, bottom: 4, right: 12),
               child: Card(
                 shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
                 color: const Color.fromARGB(255, 42, 42, 42),
