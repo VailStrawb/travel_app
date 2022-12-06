@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:travel_app/common_widgets/search_bar.dart';
-import 'package:travel_app/internal/home/background_wave.dart';
+import 'package:travel_app/ui/common_widgets/search_bar.dart';
+import 'package:travel_app/ui/home/background_wave.dart';
 
 class SliverSearchAppBar extends SliverPersistentHeaderDelegate {
   @override

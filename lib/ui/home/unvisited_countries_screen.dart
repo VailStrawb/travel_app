@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../common_widgets/search_page.dart';
+import '../common_widgets/search_page.dart';
 
 class UnvisitedCountriesScreen extends StatelessWidget {
   const UnvisitedCountriesScreen({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:travel_app/internal/get_started_screen/splash_get_started_screen.dart';
+import 'package:travel_app/ui/get_started_screen/splash_get_started_screen.dart';
 import '../home/home_screen.dart';
 
 class LoadScreen extends StatefulWidget {
