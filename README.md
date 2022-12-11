@@ -1,3 +1,5 @@
+![App screen](read_me_assets/get_started_screen.png) ![App screen](read_me_assets/app_screen.png) 
+
 # travel_app
 
 This is my first Flutter project made all by myself.
