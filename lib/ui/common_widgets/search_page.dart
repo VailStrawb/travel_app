@@ -52,7 +52,8 @@ class _SearchPageState extends State<SearchPage> {
                 color: const Color.fromARGB(255, 42, 42, 42),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const CountryPage()));
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => CountryPage(country: _data[index])));
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(15.0),
@@ -61,8 +62,8 @@ class _SearchPageState extends State<SearchPage> {
                       children: [
                         Expanded(
                           child: Text(
-                            '${_data[index].name}',
-                            style: const TextStyle(fontSize: 20, color: Colors.white70, fontWeight: FontWeight.w600),
+                            _data[index].name,
+                            style: const TextStyle(fontSize: 18, color: Colors.white70, fontWeight: FontWeight.w600),
                           ),
                         ),
                         IconButton(

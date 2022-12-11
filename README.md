@@ -1,16 +1,27 @@
 # travel_app
 
-A new Flutter project.
+This is my first Flutter project made all by myself.
 
-## Getting Started
+## Discription
 
-This project is a starting point for a Flutter application.
+This is the app for travelling. You can save the countries you've already visited. It's like to-do list for countries.
 
-A few resources to get you started if this is your first Flutter project:
+# Application features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Already implemented:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Get started screen
+- List of countries
+- Two pages (unvisited and visited countries)
+- Search AppBar
+
+
+In development:
+
+- opportunity to save the country you've visited 
+- opportunity to note the country you want to visit 
+- opportunity to search for a country 
+- opportunity to add some discription and photos from visited country 
+
+
+
