@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../common_widgets/search_page.dart';
 
-class UnvisitedCountriesScreen extends StatelessWidget {
-  const UnvisitedCountriesScreen({Key? key}) : super(key: key);
+class ExploreCountriesScreen extends StatelessWidget {
+  const ExploreCountriesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

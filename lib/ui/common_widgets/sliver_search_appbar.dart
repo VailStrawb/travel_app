@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:travel_app/ui/common_widgets/search_bar.dart';
-import 'package:travel_app/ui/home/background_wave.dart';
+import 'package:travel_app/ui/common_widgets/background_wave.dart';
 
 class SliverSearchAppBar extends SliverPersistentHeaderDelegate {
   @override
@@ -18,7 +18,7 @@ class SliverSearchAppBar extends SliverPersistentHeaderDelegate {
           top: topPadding + offset,
           left: 16,
           right: 16,
-          child: SearchBar(),
+          child: const SearchBar(),
         )
       ],
     );

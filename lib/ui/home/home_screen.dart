@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:travel_app/ui/home/unvisited_countries_screen.dart';
-import 'package:travel_app/ui/home/saved_countries_screen.dart';
+import 'package:travel_app/ui/home/explore_countries_screen.dart';
+import 'package:travel_app/ui/home/visited_countries_screen.dart';
+
+import 'desired_countries_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,8 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   static const List<Widget> _pages = <Widget>[
-    UnvisitedCountriesScreen(),
-    SavedCountriesScreen(),
+    ExploreCountriesScreen(),
+    DesiredCountriesScreen(),
+    VisitedCountriesScreen(),
   ];
 
   clearSharedPrefs() async {
@@ -39,15 +42,19 @@ class _HomeScreenState extends State<HomeScreen> {
         selectedItemColor: const Color.fromARGB(255, 210, 84, 41),
         unselectedItemColor: Colors.white54,
         iconSize: 26.0,
-        backgroundColor: const Color.fromARGB(255, 25, 25, 25),
+        backgroundColor: const Color.fromARGB(255, 42, 42, 42),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.map_outlined),
-            label: 'Explore',
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.star),
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.heart),
-            label: 'My Countries',
+            label: '',
           ),
         ],
       ),

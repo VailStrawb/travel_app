@@ -49,7 +49,7 @@ class _SearchPageState extends State<SearchPage> {
               padding: const EdgeInsets.only(left: 12, top: 4, bottom: 4, right: 12),
               child: Card(
                 shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
-                color: const Color.fromARGB(255, 42, 42, 42),
+                color: const Color.fromARGB(255, 40, 39, 39),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -69,6 +69,12 @@ class _SearchPageState extends State<SearchPage> {
                         IconButton(
                           splashRadius: 1,
                           icon: const Icon(CupertinoIcons.star),
+                          color: Colors.white54,
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          splashRadius: 1,
+                          icon: const Icon(CupertinoIcons.heart),
                           color: Colors.white54,
                           onPressed: () {},
                         )
