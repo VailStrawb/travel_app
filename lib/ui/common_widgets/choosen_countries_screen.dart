@@ -9,6 +9,7 @@ class ChoosenCountries extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 32, 32, 32),
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           pageName,
           style: const TextStyle(

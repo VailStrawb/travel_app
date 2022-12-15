@@ -16,7 +16,14 @@ class _CountryPageState extends State<CountryPage> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
+            padding: const EdgeInsets.all(20),
+            child: Text(
+              widget.country.flag,
+              style: const TextStyle(fontSize: 68),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30, right: 30),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Container(
@@ -61,6 +68,7 @@ class _CountryPageState extends State<CountryPage> {
       ),
       backgroundColor: const Color.fromARGB(255, 32, 32, 32),
       appBar: AppBar(
+        centerTitle: true,
         iconTheme: const IconThemeData(color: Colors.white70),
         title: Text(
           widget.country.name,

@@ -8,8 +8,9 @@ class DesiredCountriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Color.fromARGB(255, 32, 32, 32),
-      body: ChoosenCountries(pageName: 'Countries i\'d like to visit',),
-     
+      body: ChoosenCountries(
+        pageName: 'Desired Countries',
+      ),
     );
   }
 }

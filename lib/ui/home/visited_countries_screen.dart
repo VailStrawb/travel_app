@@ -9,7 +9,7 @@ class VisitedCountriesScreen extends StatelessWidget {
     return const Scaffold(
       backgroundColor: Color.fromARGB(255, 32, 32, 32),
       body: ChoosenCountries(
-        pageName: 'Countries i\'ve visited',
+        pageName: 'Visited Countries',
       ),
     );
   }
