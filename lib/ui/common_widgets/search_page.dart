@@ -62,7 +62,7 @@ class _SearchPageState extends State<SearchPage> {
                       children: [
                         Expanded(
                           child: Text(
-                            _data[index].name,
+                            '${_data[index].flag}  ${_data[index].name}',
                             style: const TextStyle(fontSize: 18, color: Colors.white70, fontWeight: FontWeight.w600),
                           ),
                         ),
