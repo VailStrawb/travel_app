@@ -3,5 +3,5 @@ import 'ui/home/application.dart';
 
 void main() {
   runApp(const Application());
-  print('ква');
+  print('ква, meow');
 }
