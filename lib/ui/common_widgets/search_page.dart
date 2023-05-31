@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:travel_app/ui/common_widgets/sliver_search_appbar.dart';
-import '../../country_page.dart';
+import 'country_page.dart';
 import '../../models/country.dart';
 
 class SearchPage extends StatefulWidget {
@@ -17,12 +17,12 @@ class _SearchPageState extends State<SearchPage> {
   List<Country> _data = [];
 
   void _loadCSV() async {
-    final _rawData = await rootBundle.loadString("assets/countries.csv");
-    List<List<dynamic>> _listData = const CsvToListConverter(eol: '\n').convert(_rawData);
+    final rawData = await rootBundle.loadString("assets/countries.csv");
+    List<List<dynamic>> listData = const CsvToListConverter(eol: '\n').convert(rawData);
     List<Country> countries = [];
-    _listData.forEach((element) {
+    for (var element in listData) {
       countries.add(Country.fromList(element));
-    });
+    }
     setState(() {
       _data = countries;
     });
@@ -30,6 +30,7 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   void initState() {
+    super.initState();
     _loadCSV();
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:travel_app/ui/get_started_screen/splash_get_started_screen.dart';
+import 'package:travel_app/change_notifier/welcome_screen_change_notifier.dart';
+import 'package:travel_app/ui/get_started_screen/welcome_screen.dart';
 import '../home/home_screen.dart';
 
 class LoadScreen extends StatefulWidget {
@@ -11,27 +11,34 @@ class LoadScreen extends StatefulWidget {
 }
 
 class _LoadScreenState extends State<LoadScreen> {
-  var newLaunch = false;
+  final welcomeScreenNotifier = WelcomeScreenChangeNotifier();
+
+  @override
+  void dispose() {
+    welcomeScreenNotifier.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
     super.initState();
-    loadNewLaunch();
-  }
+    welcomeScreenNotifier.resetNewPref();
 
-  loadNewLaunch() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      bool _newLaunch = ((prefs.getBool('newLaunch') ?? true));
-      newLaunch = _newLaunch;
-    });
+    // print(welcomeScreenNotifier.myValue);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 32, 32, 32),
-      body: newLaunch ? const SplashGetStartedScreen() : const HomeScreen(),
+      body: ListenableBuilder(
+        listenable: welcomeScreenNotifier,
+        builder: (context, _) {
+          return welcomeScreenNotifier.showWelcomeScreen == true
+              ? WelcomeScreen(welcomeScreenNotifier: welcomeScreenNotifier)
+              : HomeScreen(welcomeScreenNotifier: welcomeScreenNotifier);
+        },
+      ),
     );
   }
 }

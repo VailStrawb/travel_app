@@ -1,28 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:travel_app/change_notifier/welcome_screen_change_notifier.dart';
 import '../home/home_screen.dart';
 
-class SplashGetStartedScreen extends StatefulWidget {
-  const SplashGetStartedScreen({super.key});
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({super.key, required this.welcomeScreenNotifier});
+  final WelcomeScreenChangeNotifier welcomeScreenNotifier;
 
   @override
-  State<SplashGetStartedScreen> createState() => _SplashGetStartedScreenState();
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _SplashGetStartedScreenState extends State<SplashGetStartedScreen> {
-  resetNewLaunch() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    if (prefs.containsKey("newLaunch")) {
-      prefs.setBool('newLaunch', false);
-    } else {
-      prefs.setBool('newLaunch', false);
-    }
-  }
-
+class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   void initState() {
     super.initState();
-    resetNewLaunch();
+    widget.welcomeScreenNotifier.resetNewPref();
   }
 
   @override
@@ -99,15 +91,18 @@ class _SplashGetStartedScreenState extends State<SplashGetStartedScreen> {
           ),
           const Spacer(),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
             child: TextButton(
               style: ButtonStyle(
-                shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10))),
                 fixedSize: MaterialStateProperty.all(
                   const Size(10000, 50),
                   // double.infinity doesn't work here
                 ),
-                backgroundColor: MaterialStateProperty.all(const Color.fromARGB(255, 219, 87, 22)),
+                backgroundColor: MaterialStateProperty.all(
+                    const Color.fromARGB(255, 219, 87, 22)),
               ),
               onPressed: _navigateHomeScreen,
               child: const Text(
@@ -127,9 +122,12 @@ class _SplashGetStartedScreenState extends State<SplashGetStartedScreen> {
   }
 
   void _navigateHomeScreen() {
+    widget.welcomeScreenNotifier.clearSharedPrefs();
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()),
+      MaterialPageRoute(
+          builder: (context) =>
+              HomeScreen(welcomeScreenNotifier: widget.welcomeScreenNotifier)),
     );
   }
 }

@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:travel_app/ui/home/explore_countries_screen.dart';
 import 'package:travel_app/ui/home/visited_countries_screen.dart';
 
+import '../../change_notifier/welcome_screen_change_notifier.dart';
 import 'desired_countries_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
+  const HomeScreen({super.key, required this.welcomeScreenNotifier});
+ final WelcomeScreenChangeNotifier welcomeScreenNotifier;
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -22,10 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
     VisitedCountriesScreen(),
   ];
 
-  clearSharedPrefs() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.remove('newLaunch');
-  }
+
+  
 
   @override
   Widget build(BuildContext context) {

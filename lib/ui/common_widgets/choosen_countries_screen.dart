@@ -19,7 +19,7 @@ class ChoosenCountries extends StatelessWidget {
         ),
         backgroundColor: const Color.fromARGB(255, 42, 42, 42),
       ),
-      body: Center(
+      body: const Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [],
